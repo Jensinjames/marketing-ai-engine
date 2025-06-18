@@ -252,13 +252,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "OpenAI Integration Setup"
-    - "AI Asset Generation API"
-    - "Asset Management APIs"
-    - "User Profile and Dashboard APIs"
     - "Credit System Logic"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
