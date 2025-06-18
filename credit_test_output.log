@@ -1,0 +1,45 @@
+Using API URL: https://05b1dee2-7978-43ae-bb38-81b0cf93026b.preview.emergentagent.com/api
+[PASSED] User Profile API
+  Details: {
+  "user": {
+    "id": "16b63793-3310-4c5a-a288-419c0ae735c1",
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "plan": "free",
+    "credits": 76,
+    "created_at": "2025-06-18T13:17:00.819000",
+    "updated_at": "2025-06-18T13:26:41.276000"
+  }
+}
+[PASSED] Generate Email Campaign
+  Details: {
+  "asset_id": "4248d218-55ff-46ff-8fd8-9834b73cab00",
+  "title": "TechInnovate Solutions - Email Campaign",
+  "remaining_credits": 75,
+  "content_length": 3133
+}
+[PASSED] Credit System - Consumption
+  Details: {
+  "starting_credits": 76,
+  "credits_used": 1,
+  "remaining_credits": 75
+}
+[PASSED] User Profile API
+  Details: {
+  "user": {
+    "id": "16b63793-3310-4c5a-a288-419c0ae735c1",
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "plan": "free",
+    "credits": 75,
+    "created_at": "2025-06-18T13:17:00.819000",
+    "updated_at": "2025-06-18T13:26:56.355000"
+  }
+}
+[FAILED] Credit System - Validation
+  Details: {
+  "reason": "Asset generation failed with credits available (attempt 5)",
+  "status_code": 502,
+  "response": ""
+}
+

@@ -1,0 +1,192 @@
+Using API URL: https://05b1dee2-7978-43ae-bb38-81b0cf93026b.preview.emergentagent.com/api
+
+===== STARTING BACKEND API TESTS =====
+
+[PASSED] API Root
+  Details: {
+  "response": {
+    "message": "AI Marketing Asset Platform API"
+  }
+}
+[PASSED] User Profile API
+  Details: {
+  "user": {
+    "id": "16b63793-3310-4c5a-a288-419c0ae735c1",
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "plan": "free",
+    "credits": 93,
+    "created_at": "2025-06-18T13:17:00.819000",
+    "updated_at": "2025-06-18T13:19:49.689000"
+  }
+}
+[PASSED] Dashboard Stats API
+  Details: {
+  "stats": {
+    "user": {
+      "id": "16b63793-3310-4c5a-a288-419c0ae735c1",
+      "email": "demo@example.com",
+      "name": "Demo User",
+      "plan": "free",
+      "credits": 93,
+      "created_at": "2025-06-18T13:17:00.819000",
+      "updated_at": "2025-06-18T13:19:49.689000"
+    },
+    "total_assets": 6,
+    "credits_used": 7,
+    "asset_counts": {
+      "email_campaign": 1,
+      "social_media_ad": 1,
+      "landing_page": 1,
+      "sales_funnel": 1,
+      "blog_post": 1,
+      "press_release": 1
+    },
+    "plan_limits": {
+      "free": {
+        "credits": 100,
+        "assets": 50
+      },
+      "starter": {
+        "credits": 500,
+        "assets": 200
+      },
+      "growth": {
+        "credits": 2000,
+        "assets": 1000
+      },
+      "enterprise": {
+        "credits": 10000,
+        "assets": "unlimited"
+      }
+    }
+  }
+}
+[PASSED] Generate Email Campaign
+  Details: {
+  "asset_id": "6ff40e12-0f97-43f6-a467-eb0abcab2994",
+  "title": "EcoGreen Solutions - Email Campaign",
+  "remaining_credits": 92,
+  "content_length": 3024
+}
+[PASSED] Generate Social Media Ad
+  Details: {
+  "asset_id": "f035928d-d89b-4e69-bee2-be94c42b36f3",
+  "title": "TechInnovate - Social Media Ad",
+  "remaining_credits": 91,
+  "content_length": 2439
+}
+[PASSED] Generate Landing Page
+  Details: {
+  "asset_id": "3dbee82f-97fc-49cb-ad8b-4acaa0123805",
+  "title": "HealthFirst - Landing Page",
+  "remaining_credits": 90,
+  "content_length": 3373
+}
+[PASSED] Generate Sales Funnel
+  Details: {
+  "asset_id": "7818dcb0-6db2-4236-8fae-af8465275958",
+  "title": "FinanceWise - Sales Funnel",
+  "remaining_credits": 89,
+  "content_length": 4518
+}
+[PASSED] Generate Blog Post
+  Details: {
+  "asset_id": "388937b7-c9f8-4dab-b0f1-955ee52ebbe7",
+  "title": "FoodDelight - Blog Post",
+  "remaining_credits": 88,
+  "content_length": 4584
+}
+[PASSED] Generate Press Release
+  Details: {
+  "asset_id": "f720f345-6c27-4c3e-bea9-72f607561cad",
+  "title": "InnovateTech - Press Release",
+  "remaining_credits": 87,
+  "content_length": 3915
+}
+[PASSED] Get All Assets
+  Details: {
+  "count": 12
+}
+[PASSED] Get Asset by ID (6ff40e12-0f97-43f6-a467-eb0abcab2994)
+  Details: {
+  "title": "EcoGreen Solutions - Email Campaign",
+  "asset_type": "email_campaign"
+}
+[PASSED] Delete Asset (6ff40e12-0f97-43f6-a467-eb0abcab2994)
+  Details: {
+  "result": {
+    "message": "Asset deleted successfully"
+  }
+}
+[PASSED] Verify Asset Deletion (6ff40e12-0f97-43f6-a467-eb0abcab2994)
+[PASSED] User Profile API
+  Details: {
+  "user": {
+    "id": "16b63793-3310-4c5a-a288-419c0ae735c1",
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "plan": "free",
+    "credits": 87,
+    "created_at": "2025-06-18T13:17:00.819000",
+    "updated_at": "2025-06-18T13:21:31.450000"
+  }
+}
+[PASSED] Generate Email Campaign
+  Details: {
+  "asset_id": "66a35fa9-17de-4061-a214-e7c26b8f8da8",
+  "title": "TechInnovate Solutions - Email Campaign",
+  "remaining_credits": 86,
+  "content_length": 2339
+}
+[PASSED] Credit System - Consumption
+  Details: {
+  "starting_credits": 87,
+  "credits_used": 1,
+  "remaining_credits": 86
+}
+[PASSED] User Profile API
+  Details: {
+  "user": {
+    "id": "16b63793-3310-4c5a-a288-419c0ae735c1",
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "plan": "free",
+    "credits": 86,
+    "created_at": "2025-06-18T13:17:00.819000",
+    "updated_at": "2025-06-18T13:21:51.512000"
+  }
+}
+[FAILED] Credit System - Validation
+  Details: {
+  "reason": "Asset generation failed with credits available (attempt 1)",
+  "status_code": 422,
+  "response": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"asset_type\"],\"msg\":\"Field required\",\"input\":{\"business_name\":\"Test Company 1\",\"product_service\":\"AI-powered project management software\",\"target_audience\":\"Small to medium tech companies\",\"tone\":\"professional\",\"objectives\":[\"increase trial signups\",\"demonstrate product value\"],\"additional_context\":\"Our software integrates with popular tools like Slack and GitHub\"},\"url\":\"https://errors.pydantic.dev/2.11/v/missing\"}]}"
+}
+[PASSED] Invalid Asset Type Handling
+  Details: {
+  "status_code": 422,
+  "response": "{\"detail\":[{\"type\":\"enum\",\"loc\":[\"body\",\"asset_type\"],\"msg\":\"Input should be 'email_campaign', 'social_media_ad', 'landing_page', 'sales_funnel', 'blog_post' or 'press_release'\",\"input\":\"invalid_type\",\"ctx\":{\"expected\":\"'email_campaign', 'social_media_ad', 'landing_page', 'sales_funnel', 'blog_post' or 'press_release'\"},\"url\":\"https://errors.pydantic.dev/2.11/v/enum\"}]}"
+}
+[PASSED] Missing Required Fields Handling
+  Details: {
+  "status_code": 422,
+  "response": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"business_name\"],\"msg\":\"Field required\",\"input\":{\"asset_type\":\"email_campaign\",\"target_audience\":\"Test Audience\",\"tone\":\"professional\"},\"url\":\"https://errors.pydantic.dev/2.11/v/missing\"},{\"type\":\"missing\",\"loc\":[\"body\",\"product_service\"],\"msg\":\"Field required\",\"input\":{\"asset_type\":\"email_campaign\",\"target_audience\":\"Test Audience\",\"tone\":\"professional\"},\"url\":\"https://errors.pydantic.dev/2.11/v/missing\"}]}"
+}
+[PASSED] Nonexistent Asset Handling
+  Details: {
+  "status_code": 404,
+  "fake_id": "4536705f-5d83-4770-bba6-a2dd7ce1e1b5"
+}
+
+===== TEST SUMMARY =====
+Total Tests: 21
+Passed: 20
+Failed: 1
+Success Rate: 95.24%
+
+Failed Tests:
+- Credit System - Validation
+
+===== END OF TESTS =====
+
