@@ -137,15 +137,18 @@ backend:
 
   - task: "AI Asset Generation API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented /api/assets/generate endpoint with credit validation, prompt templates for different asset types, and MongoDB storage"
+      - working: true
+        agent: "testing"
+        comment: "AI Asset Generation API is working correctly. Successfully tested all 6 asset types (email_campaign, social_media_ad, landing_page, sales_funnel, blog_post, press_release). The API correctly validates input, generates content using OpenAI, and stores assets in MongoDB."
 
   - task: "Asset Management APIs"
     implemented: true
