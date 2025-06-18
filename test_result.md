@@ -182,11 +182,11 @@ backend:
 
   - task: "Credit System Logic"
     implemented: true
-    working: false
+    working: true
     file: "/app/backend/server.py"
-    stuck_count: 1
+    stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
@@ -194,6 +194,9 @@ backend:
       - working: false
         agent: "testing"
         comment: "Credit consumption works correctly - credits are deducted when assets are generated and tracked in MongoDB. However, the credit validation test failed when attempting to generate assets until credits run out. The test failed because the payload for testing credit validation was missing the 'asset_type' field, causing a validation error instead of a credit limit error."
+      - working: true
+        agent: "testing"
+        comment: "Fixed the test script to include the proper payload structure with all required fields. Credit system is working correctly - it properly deducts credits when assets are generated and prevents generation when credits are insufficient."
 
 frontend:
   - task: "Modern UI with Tailwind CSS"
