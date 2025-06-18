@@ -152,15 +152,18 @@ backend:
 
   - task: "Asset Management APIs"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created CRUD endpoints for assets: GET /api/assets, GET /api/assets/{id}, DELETE /api/assets/{id}"
+      - working: true
+        agent: "testing"
+        comment: "Asset Management APIs are working correctly. Successfully tested GET /api/assets (listing all assets), GET /api/assets/{id} (retrieving a specific asset), and DELETE /api/assets/{id} (deleting an asset). The APIs correctly handle error cases like non-existent assets."
 
   - task: "User Profile and Dashboard APIs"
     implemented: true
