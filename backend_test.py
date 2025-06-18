@@ -318,11 +318,22 @@ def test_credit_system(initial_credits: int):
     # Generate assets until credits run out
     assets_to_generate = current_credits + 1  # One more than available credits
     
+    # Create a proper payload for asset generation
+    payload = {
+        "asset_type": "email_campaign",
+        "business_name": "Credit Test Company",
+        "product_service": "Credit validation service",
+        "target_audience": "Testing system",
+        "tone": "professional",
+        "objectives": ["test credit system"],
+        "additional_context": "Testing credit validation"
+    }
+    
     for i in range(assets_to_generate):
-        business_data["business_name"] = f"Test Company {i+1}"
+        payload["business_name"] = f"Credit Test Company {i+1}"
         
         try:
-            response = requests.post(f"{API_URL}/assets/generate", json=business_data)
+            response = requests.post(f"{API_URL}/assets/generate", json=payload)
             
             # If we've used all credits, we should get a 402 error
             if i >= current_credits and response.status_code == 402:
