@@ -122,15 +122,18 @@ backend:
 
   - task: "Database Models (User, Asset, CreditUsage)"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created Pydantic models for User, Asset, CreditUsage with proper relationships and UUID-based IDs"
+      - working: true
+        agent: "testing"
+        comment: "Database models are working correctly. User, Asset, and CreditUsage models are properly defined with UUID-based IDs. MongoDB integration is functioning as expected with proper data persistence."
 
   - task: "AI Asset Generation API"
     implemented: true
