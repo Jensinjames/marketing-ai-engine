@@ -167,15 +167,18 @@ backend:
 
   - task: "User Profile and Dashboard APIs"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented user profile API and dashboard stats with credit tracking and asset analytics"
+      - working: true
+        agent: "testing"
+        comment: "User Profile and Dashboard APIs are working correctly. GET /api/user/profile returns the user data with correct credit information. GET /api/dashboard/stats provides comprehensive statistics including asset counts by type, total assets, credits used, and plan limits."
 
   - task: "Credit System Logic"
     implemented: true
